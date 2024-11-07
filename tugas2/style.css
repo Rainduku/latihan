@@ -1,0 +1,59 @@
+body{
+    font-family: sans-serif;
+    background: #d5f0f3;
+}
+
+h2{
+    text-align: center;
+}
+
+h3{
+    text-align: center;
+}
+
+.tulisanlogin{
+    text-align: center;
+    text-transform: uppercase;
+    font-size: x-large;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.kotaklogin{
+    width: 400px;
+    background: white;
+    margin: auto;
+    padding: 30px 20px;
+}
+
+.formlogin{
+    box-sizing: border-box;
+    width: 100%;
+    padding: 10px;
+    font-size: 11pt;
+    margin-bottom: 20px;
+}
+
+.tombol_login{
+    background: blue;
+    color: #d5f0f3;
+    font-size: 11pt;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.facebook{
+    text-align: center;
+}
+
+.lupa_sandi{
+    text-align: center;
+}
+
+.sign_in{
+    width: 400px;
+    background: white;
+    margin: 5px auto;
+    padding: 10px 20px;
+}

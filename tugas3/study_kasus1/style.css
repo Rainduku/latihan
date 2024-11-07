@@ -1,0 +1,38 @@
+.container{
+    width: 80%;
+    padding-top: 300px;
+    margin-left: 100px;
+}
+
+.line{
+    background: yellow;
+    width: 150px;
+    height: 5px;
+}
+
+.title{
+    font-size: 42px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.content{
+    text-align: justify;
+    margin-left: 20px;
+    padding-right: 20px;
+}
+
+.intro{
+    padding-left: 20px;
+}
+
+.img{
+    
+}
+
+.button{
+    background: yellow;
+    width: 100px;
+    height: 30px;
+    margin-left: 20px;
+    border: none;
+}

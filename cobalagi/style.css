@@ -1,0 +1,17 @@
+.navbar {
+    padding: 20px;
+}
+
+.content {
+    background: #DDD;
+    height: 400px;
+    text-align: justify;
+}
+
+.purpose {
+    margin-top: 200px;
+}
+
+.footer {
+    margin-top: 30px;
+}
