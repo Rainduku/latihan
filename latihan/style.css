@@ -1,0 +1,19 @@
+.promo {
+    color: crimson;
+    font-size: medium;
+}
+
+.ongkir {
+    text-decoration: none;
+    color: forestgreen;
+}
+
+.button {
+    width: 300px;
+    margin-top: 10px;
+}
+
+.mina {
+    margin-top: 20px;
+    margin-bottom: 200px;
+}
