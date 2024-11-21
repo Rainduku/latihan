@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>destructuring</title>
+</head>
+<body>
+    <script>
+        // destructuring array
+        let Karyawan = ["andre", "jaka", "malik", "jaenab", "agus"];
+
+        let [a, b, ...dst] = Karyawan;
+        console.log(a, b, dst);
+
+        //destruction objek
+        let idKaryawan = {
+        nama: "agus",
+        asal: "pandeglang",
+        JK: "laki-laki",
+        status: "belum menikah",
+        TTL : {
+            tempat : "pandeglang", 
+            tgl : 170996
+        }
+        };
+
+        let {nama, asal, TTL}=idKaryawan;
+        console.log(nama, asal, TTL);
+
+        //function destruction
+
+        let idKaryawati = {
+        nama: "marlina",
+        asal: "pandeglang",
+        JK: "laki-laki",
+        status: "belum menikah",
+        TTL : {
+            tempat : "pandeglang", 
+            tgl : 170996
+        }
+        };
+        function printInfoKaryawati({nama, asal, JK}){
+        console.log(nama, asal, JK);
+        }
+        printInfoKaryawati(idKaryawati);
+
+        //penggunaan alias
+
+        let idPekerja = {
+        nama: "marlina",
+        asal: "pandeglang",
+        JK: "laki-laki",
+        status: "belum menikah",
+        TTL : {
+            tempat : "pandeglang", 
+            tgl : 170996
+        }
+        };
+        function printInfoPekerja({nama, asal:asl, JK}){
+        console.log(nama, asl, JK);
+        }
+        printInfoPekerja(idPekerja);
+
+        //memasukan properti baru
+
+        let idKerja = {
+        nama: "marlina",
+        asal: "pandeglang",
+        JK: "laki-laki",
+        status: "belum menikah",
+        TTL : {
+            tempat : "pandeglang", 
+            tgl : 170996
+        }
+        };
+        function printInfoKerja({nama, asal, JK, kondisi = "sehat"}){
+        console.log(nama, asal, JK, kondisi);
+        }
+        printInfoKaryawati(idKerja);
+    </script>
+</body>
+</html>
