@@ -1,51 +1,69 @@
-class Table {
-    constructor(init) {
-      this.init = init;
+function getData(url, cb) {
+  let xhr = new XMLHttpRequest();
+  xhr.onload = function () {
+    if (xhr.status === 200) {
+      return cb(JSON.parse(xhr.responseText));
     }
-  
-    createHeader(data) {
-      let open = "<thead><tr>";
-      let close = "</tr></thead>";
-      data.forEach((d) => {
-        open += `<th>${d}</th>`;
-      });
-  
-      return open + close;
-    }
-  
-    createBody(data) {
-      let open = "<tbody>";
-      let close = "</tbody>";
-  
-      data.forEach((d) => {
-        open += `
-          <tr>
-            <td>${d[0]}</td>
-            <td>${d[1]}</td>
-          </tr>
-        `;
-      });
-  
-      return open + close;
-    }
-  
-    render(element) {
-      let table =
-        "<table class='table table-hover'>" +
-        this.createHeader(this.init.columns) +
-        this.createBody(this.init.data) +
-        "</table>";
-      element.innerHTML = table;
-    }
-  }
-  
-  const table = new Table({
-    columns: ["Name", "Email"],
-    data: [
-      ["Edi Hartono", "edi.eduwork@gmail.com"],
-      ["Dodi Prakoso", "dodi@upscale.id"]
-    ]
+  };
+  xhr.open("GET", url);
+  xhr.send();
+}
+
+function table(data){
+  const table=document.getElementById("data")
+  const tableBody=document.querySelector("#data tbody")
+  console.log(tableBody)
+  data.forEach(user => {
+    const row=document.createElement("tr")
+    const valueId=document.createElement("td")
+    valueId.textContent=user.id
+    row.appendChild(valueId)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valueName=document.createElement("td")
+    valueName.textContent=user.name
+    row.appendChild(valueName)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valueUsername=document.createElement("td")
+    valueUsername.textContent=user.username
+    row.appendChild(valueUsername)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valueEmail=document.createElement("td")
+    valueEmail.textContent=user.email
+    row.appendChild(valueEmail)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valueAddress=document.createElement("td")
+    valueAddress.textContent=user.address.city
+    row.appendChild(valueAddress)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valuePhone=document.createElement("td")
+    valuePhone.textContent=user.phone
+    row.appendChild(valuePhone)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valueWebsite=document.createElement("td")
+    valueWebsite.textContent=user.website
+    row.appendChild(valueWebsite)
+    tableBody.appendChild(row)
+    console.log(row)
+    const valueCompany=document.createElement("td")
+    valueCompany.textContent=user.company.name
+    row.appendChild(valueCompany)
+    tableBody.appendChild(row)
+    console.log(row)
   });
-  const app = document.getElementById("app");
-  table.render(app);
+}
+function fetchData(callback){
+  getData("https://jsonplaceholder.typicode.com/users", function(data) {
+    // console.log(data);
+    callback(data)
+  });
+}
+fetchData(table)
+// const app = document.getElementById("app");
+//   table.render(app);
   
