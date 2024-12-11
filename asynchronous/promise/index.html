@@ -15,27 +15,11 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 <body>
-    <div class="d-flex flex-wrap justify-content-center align-items-center" style="height: 100vh;">
-        <div class="card-column">
-            <div class="card" style="width: 80vw;">
-                <div class="row bg-danger">
-                    <h1>live search</h1>
-                </div>
-                <tbody id="data">
-                <div class="row" style="margin-top: 50px;">
-                    <div class="col bg-primary" style="margin-right: 5px;height: 20vw;">
-                        <h1>ini card 1</h1>
-                    </div>
-                    <div class="col bg-success" style="margin-right: 5px;">
-                        <h1>ini card 2</h1>
-                    </div>
-                    <div class="col bg-warning">
-                        <h1>ini card 3</h1>
-                    </div>
-                </div>
-            </tbody>
-            </div>
-        </div>
-    </div>
+    <div class="input-group mb-3">
+        <span class="input-group-text" id="basic-addon1">@</span>
+        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" id="search">
+      </div>
+    <div class="d-flex align-items-center justify-content-center flex-wrap gap-3" id="data"></div>
+    <script src="script.js"></script>
 </body>
 </html>

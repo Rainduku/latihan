@@ -1,27 +1,18 @@
-axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
-    document.getElementById('data').innerHTML = render(res.data);
-  })
   
   function render(result) {
+    console.log(result)
     let table = '';
-    result.forEach(data => {
-      table += `<tr>
-                  <td>${data.id}</td>
-                  <td>${data.name}</td>
-                  <td>${data.username}</td>
-                  <td>${data.email}</td>
-                  <td>
-                    ${data.address.street},
-                    ${data.address.suite}, 
-                    ${data.address.city}
-                   </td>
-                  <td>${data.phone}</td>
-                  <td>${data.website}</td>
-                  <td>${data.company.name}</td>
-                </tr>`;
+    result.articles.forEach(data => {
+      table +=`<div class="card" style="width: 18rem;">
+  <img src="${data.urlToImage}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">${data.title}</h5>
+    <p class="card-text">${data.content}</p>
+    <a href="${data.url}" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>` 
     })
     return table;
-    console.log(data)
   } 
   
   function message(msg) {
@@ -29,3 +20,11 @@ axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
               <td class="text-center" colspan="8">${msg}</td>
           </tr>`;
   }
+  let searchInput = document.getElementById('search')
+  searchInput.addEventListener('input',function(e){
+    let value = e.target.value
+    console.log(value)
+  })
+  axios.get('https://newsapi.org/v2/everything?q=tesla&from=2024-11-10&sortBy=publishedAt&apiKey=d0df91bd323046cbb3c60ffdd75d0143').then(res => {
+    document.getElementById('data').innerHTML = render(res.data);
+  })
