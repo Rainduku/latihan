@@ -24,7 +24,20 @@
   searchInput.addEventListener('input',function(e){
     let value = e.target.value
     console.log(value)
+    var url = 'https://newsapi.org/v2/everything?' +
+          'q=Apple&' +
+          'from=2024-12-15&' +
+          'sortBy=popularity&' +
+          'apiKey=d0df91bd323046cbb3c60ffdd75d0143';
+
+var req = new Request(url);
+
+fetch(req)
+    .then(function(response) {
+        console.log(response.json());
+    })
+    
   })
-  axios.get('https://newsapi.org/v2/everything?q=tesla&from=2024-11-10&sortBy=publishedAt&apiKey=d0df91bd323046cbb3c60ffdd75d0143').then(res => {
+  axios.get('https://newsapi.org/v2/everything?q=tesla&from=2024-11-15&sortBy=publishedAt&apiKey=d0df91bd323046cbb3c60ffdd75d0143').then(res => {
     document.getElementById('data').innerHTML = render(res.data);
   })
